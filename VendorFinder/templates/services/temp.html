@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+temp
+{% endblock %}
+{% block content %}
+<div class="container">
+    <a href="{% url 'view_service' %}">Services</a>
+    {% for i in service %}
+    <h4>{{ i.service_name }}</h4>
+    {% endfor %}
+</div>
+{% endblock %}

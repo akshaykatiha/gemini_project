@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+SubServices
+{% endblock %}
+{% block content %}
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h3> Subservices for {{ service_name }} </h3>
+            <p</p>
+    </div>
+    <div class="container">
+        <div class="row">
+                {% for item in subservice_list %}
+                <div class="col-md-4">
+                        <a class= "p-2 text-dark" href="{% url 'services' item.service_id item.service.service_name item.id item.sub_service_name %}" style="text-decoration: none">
+                    <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                            <div class="card-body">
+                              <h5 class="card-title">{{item.sub_service_name}}</h5>                              
+                            </div>
+                    </div>
+                        </a>
+                </div>
+                    {% endfor %}
+            </div>
+            <div class="pagination">
+                    <span class="step-links">
+                    {% if count.has_previous %}
+                    <a href="?page=1">&laquo; First</a>
+                    <a href="?page={{ count.previous_page_number }}">Previous</a>
+                    {% endif %}
+                    
+                    <span class="current">
+                    Page {{ count.number }} of {{ count.paginator.num_pages }}
+                    </span>
+                    
+                    {% if count.has_next %}
+                    <a href="?page={{ count.next_page_number }}">Next</a>
+                    <a href="?page={{ count.paginator.num_pages }}">Last &raquo;</a>
+                    {% endif %}
+                    </span>
+            </div>
+        </div>
+    {% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Services
+{% endblock %}
+{% block content %}
+<div class="container">
+  <h3 style="color: green;">Services Provided </h3>
+<div class="row">
+<table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Subservice</th>
+            <th scope="col">Charge</th>
+            <th scope="col">Active From</th>
+            <th scope="col">Last Updated</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in vendor_detail %}
+          <tr>
+            <td>{{ item.service.service_name }}</td>
+            <td>{{ item.sub_service.sub_service_name }}</td>
+            <td>{{ item.sub_service_charge }}</td>
+            <td>{{ item.row_insert_date }}</td>
+            <td>{{ item.row_update_date }}</td>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <hr>
+    <h5>Add New Service</h5>
+    <p>To add new service to your profile.
+    <a href="{% url 'add_service' username %}" class="btn btn-success">Add service</a>
+  </p>
+</div>
+      {% endblock %}

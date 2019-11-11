@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form method = "POST">
+    {% csrf_token %}
+    <div class="container" text-align = "center">
+            <div class="row">
+                    <div class="col-3">
+                    </div>
+                    <div class="col-6">
+                            <div class="card">
+                                <div class="card-body">
+                                <h4>Already Member ! <a href="{% url 'login' %}">Login </a> to continue</h4>
+                                <h5>New User ! Please Signup</h5>
+                                <a href="{% url 'vendor_signup' %}">
+                                <button type="button" class="btn btn-outline-primary">I am Vendor</button>
+                                </a>
+                                <a href="{% url 'customer_signup' %}">
+                                <button type="button" class="btn btn-outline-primary">I am Customer</button>
+                                </a>
+                            </div>
+                          </div>
+                        </div>
+                    <div class="col-3">
+                    </div>
+            </div>
+    </div>
+</form>
+{% endblock %}

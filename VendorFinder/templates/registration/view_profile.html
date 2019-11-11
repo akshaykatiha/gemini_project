@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block title %}
+Profile
+{% endblock %}
+{% block content %}
+
+
+{% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <p> {{ error }} </p>
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class = "col-8">
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+            {% endif %}
+          <div class="card">
+            <div class="card-body">
+              <div class="container">
+                  <h4 style="color: green">Personal Information :</h4>
+                  <p>Username : {{ user.username }}</p>
+                  {% if user.first_name %}
+                  <p>Name : {{ user.first_name }} {{ user.last_name }}</p>
+                  {% endif %}
+                  {% if user.phone %}
+                  <p>Phone : {{ user.phone }}</p>
+                  {% endif %}
+                  {% if user.email %}
+                  <p>Email : {{ user.email }}</p>
+                  {% endif %}
+                  <hr>
+                  {% if user.address or user.city or user.pincode or user.state %}
+                  <h4 style="color: green">Saved Address :</h4>
+                  {% if user.address %}
+                  <p>Address : {{ user.address }}</p>
+                  {% endif %}
+                  {% if user.city %}
+                  <p>City : {{ user.city }}
+                  {% endif %}
+                  {% if user.pincode %}
+                  &nbsp;&nbsp;
+                  Pincode : {{ user.pincode }}
+                  {% endif %}
+                  &nbsp;&nbsp;
+                  {% if user.state %}
+                  &nbsp;&nbsp;
+                  State : {{ user.state }}</p>
+                  {% endif %}
+                  <hr>
+                  {% endif %}
+                  {% if user.is_vendor %}
+                  <h4 style="color: green">Business Information :</h4>
+                  <p>Number of customer served :
+                    {% if vendor.customer_served %}
+                    {{ vendor.customer_served }}
+                    {% else %}
+                    0
+                    {% endif %}
+                  </p>
+                  <p>Current Rating : 
+                    {% if vendor.rating %}  
+                    {{ vendor.rating }}/5
+                    {% else %}
+                    0
+                    {% endif %}
+                </p>
+                  {% else %}
+                  <h4 style="color: green">Services :</h4>
+                  <p>Number of services taken : 
+                    {% if customer.service_taken %}  
+                    {{ customer.service_taken }}</p>
+                  {% else %}
+                  0
+                  {% endif %}
+                  <hr>
+                  {% endif %}
+                  <p>Your profile was last updated on : {{ user.row_update_date }}</p>
+                  <a href="{% url 'update_profile' %}">Update Profile</a>    
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+Update Profile
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+                {% endif %}
+        <div class="card">
+                <div class="card-body">
+                <div class="container">
+                <form method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                        <div class="col-5">
+                        {{ form.username | as_crispy_field }}
+                        </div>
+                        <div class="col-4">
+                        {{ form.image | as_crispy_field }}
+                        </div>
+                        <div class="row">
+                        <div class="col-5">
+                        {{ form.email | as_crispy_field }}
+                        </div>
+                        <div class="col-4">
+                        {{ form.phone | as_crispy_field }}
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-4">
+                        {{ form.first_name | as_crispy_field }}
+                        </div>
+                        <div class="col-3">
+                        {{ form.last_name | as_crispy_field }}
+                        </div>
+                        <div class="col-2">
+                        {{ form.gender | as_crispy_field }}
+                        </div>
+                        </div>
+                        {{ form.address | as_crispy_field }}
+                        <div class="row">
+                        <div class="col-3">
+                        {{ form.city | as_crispy_field }}
+                        </div>
+                        <div class="col-3">
+                        {{ form.pincode | as_crispy_field }}
+                        </div>
+                        <div class="col-3">
+                        {{ form.state | as_crispy_field }}
+                        </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Update Profile</button>
+                </form>
+                </div>
+                </div>
+        </div>
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
+</div>
+{% endblock %}

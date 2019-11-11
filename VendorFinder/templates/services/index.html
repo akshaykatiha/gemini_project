@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Vendor Finder</h1>
+        <p class="lead">A platform to provide address and contact details of Vendoors 
+          of your locality to serve for the services you want.Find any kind of domestic or coorperative services like 
+          Plumbing, Electric Services, Carpenting, Cleaning, Pest Control etc.
+        </p>
+      </div>
+      {%  if not user.is_authenticated %}
+      <div class="container">
+          <div class="row mb-2">
+              <div class="col-md-6">
+                  <a class="p-2 text-dark" href="{% url 'view_profile' %}" style="text-decoration: none">
+                <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                  <div class="card-body d-flex flex-column align-items-start">
+                    <h3 class="mb-0">
+                    <strong class="d-inline-block mb-2 text-success">Vendor</strong>                    
+                    </h3>
+                    <!--<div class="mb-1 text-muted">"</div>-->
+                    <p class="card-text mb-auto">
+                    Serve customers by your unique skill and earn money.
+                    Increase your customer list with us. Register or Login to see more
+                    </p>
+                  </div>
+                  <img class="card-img-right flex-auto d-none d-md-block"  alt="Image" style="width: 200px; height: 200px;" src="{% static '/media/index_vendor.png' %}" data-holder-rendered="true">
+                </div>
+              </a>
+              </div>
+            
+              <div class="col-md-6">
+                  <a class="p-2 text-dark" href="{% url 'services' %}" style="text-decoration: none">
+                  <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                    <div class="card-body d-flex flex-column align-items-start">
+                      <h3 class="mb-0">
+                      <strong class="d-inline-block mb-2 text-success">Customer</strong>                    
+                      </h3>
+                      <!--<div class="mb-1 text-muted">"</div>-->
+                      <p class="card-text mb-auto">
+                      Need Serve at your door from certified customers at affordable price. We are a sure shot destination for your service needs.
+                      </p>
+                    </div>
+                    <img class="card-img-right flex-auto d-none d-md-block"  alt="Image" style="width: 200px; height: 200px;" src="{% static '/media/index_customer1.jpg' %}" data-holder-rendered="true">
+                  </div>
+                </a>
+              </div>
+          </div>
+      </div>
+      {% else %}
+      {% if user_type %}
+      <div class="container">
+          <div class="row mb-2">
+              <div class="col-md-12">
+                  <a class="p-2 text-dark" href="{% url 'vendor_profile' %}" style="text-decoration: none">
+                <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                  <div class="card-body d-flex flex-column align-items-start">
+                    <h3 class="mb-0">
+                    <strong class="d-inline-block mb-2 text-success">Vendor</strong>                    
+                    </h3>
+                    <!--<div class="mb-1 text-muted">"</div>-->
+                    <p class="card-text mb-auto">
+                    Serve customers by your unique skill and earn money.
+                    Increase your customer list with us. Register or Login to see more
+                    </p>
+                  </div>
+                  <img class="card-img-right flex-auto d-none d-md-block"  alt="Image" style="width: 200px; height: 200px;" src="{% static '/media/index_vendor.png' %}" data-holder-rendered="true">
+                </div>
+              </a>
+              </div>
+              
+          </div>
+      </div>
+      {% else %}
+      <div class="container">
+          <div class="row mb-2">
+              <div class="col-md-12">
+                  <a class="p-2 text-dark" href="{% url 'services' %}" style="text-decoration: none">
+                  <div class="card flex-md-row mb-4 box-shadow h-md-250 border-0">
+                    <div class="card-body d-flex flex-column align-items-start border-0">
+                      <h3 class="mb-0">
+                      <strong class="d-inline-block mb-2 text-success">Customer</strong>                    
+                      </h3>
+                      <!--<div class="mb-1 text-muted">"</div>-->
+                      <p class="card-text mb-auto">
+                      Need Serve at your door from certified customers at affordable price. We are a sure shot destination for your service needs.
+                      </p>
+                    </div>
+                    <img class="card-img-right flex-auto d-none d-md-block"  alt="Image" style="width: 200px; height: 200px;" src="{% static '/media/index_customer1.jpg' %}" data-holder-rendered="true">
+                  </div>
+                </a>
+              </div>
+              
+          </div>
+      </div>
+      {% endif %}
+      {% endif %}
+              
+           
+
+{% endblock %}
