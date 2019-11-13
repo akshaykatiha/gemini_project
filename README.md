@@ -20,4 +20,4 @@ Before you can use this project, you’ll need to install __Python__, __Django__
 6. Migrate tables to database by running command : ``` $python manage.py migrate  ```
 6. Create superuser for admin access by running command : ``` $python manage.py createsuperuser  ```
 7. Run server from terminal by running command : ``` $python manage.py runserver ```
-9. Go to your browser & type '127.0.0.1:8000' in the address bar to run project locally.
+9. Go to your browser & type __127.0.0.1:8000/services__ in the address bar to run project locally.
