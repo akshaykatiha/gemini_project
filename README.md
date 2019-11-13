@@ -1,5 +1,5 @@
 # VendorFinder
-# Description
+## Description
 # Documentation
 # Technology Used
 # Getting Started
