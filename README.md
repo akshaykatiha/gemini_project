@@ -1,13 +1,9 @@
 # VendorFinder
-<hr>
 # Description
-<hr>
 # Documentation
-<hr>
 # Technology Used
-<hr>
 # Getting Started
-<hr>
+
 
 Step 1 : Create virtual environment by running commang :  python -m venv (virtual-name)
   
