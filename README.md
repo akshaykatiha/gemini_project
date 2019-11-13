@@ -2,12 +2,16 @@
 ## Description
 > A platform to provide address and contact details of Vendoors of your locality to serve for the services you want.Find any kind of domestic or coorperative services like Plumbing, Electric Services, Carpenting, Cleaning, Pest Control etc.
 # Documentation
-Documentation of the project can be viewed in 
+Documentation of the project can be viewed in Docs folder.
 # Technology Used
-  FromtEnd
-  Backend
-  Framework
-  Database
+  * FrontEnd
+  - HTML, CSS, JavaScript, Bootstrap
+  * BackEnd
+  - Python
+  * Framework
+  - Django
+  * Database
+  - We are using Django ORM, so you can use any Database you want. More can be found [here](https://docs.djangoproject.com/en/2.2/ref/databases/)
 # Getting Started
 
 
