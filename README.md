@@ -1,7 +1,13 @@
 # VendorFinder
 ## Description
+A platform to provide address and contact details of Vendoors of your locality to serve for the services you want.Find any kind of domestic or coorperative services like Plumbing, Electric Services, Carpenting, Cleaning, Pest Control etc.
 # Documentation
+Documentation of the project can be viewed in 
 # Technology Used
+  FromtEnd
+  Backend
+  Framework
+  Database
 # Getting Started
 
 
