@@ -10,7 +10,7 @@ Documentation of the project can be viewed in Docs folder.
   * __Database__ : We are using Django ORM, so you can use any Database you want. More can be found [here](https://docs.djangoproject.com/en/2.2/ref/databases/)
 # Getting Started
 ## PreRequisite
-Before you can use this project, you’ll need to go through some installations. minimal installation that’ll work can be found [here](https://docs.djangoproject.com/en/2.2/intro/install/)
+Before you can use this project, you’ll need to install __Python__, __Django__ and __Database__. Minimal installation that’ll work can be found [here](https://docs.djangoproject.com/en/2.2/intro/install/)
 ## Project Setup
 1. Create virtual environment in your project-folder by running command : ```python -m venv <virtual-env-name>  ```
 2. Activate virtual environment by running command ```  source <virtual-env-name>/bin/activate```
