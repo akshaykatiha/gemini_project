@@ -4,14 +4,11 @@
 # Documentation
 Documentation of the project can be viewed in Docs folder.
 # Technology Used
-  * FrontEnd
-  - HTML, CSS, JavaScript, Bootstrap
-  * BackEnd
-  - Python
-  * Framework
-  - Django
-  * Database
-  - We are using Django ORM, so you can use any Database you want. More can be found [here](https://docs.djangoproject.com/en/2.2/ref/databases/)
+  * __FrontEnd__ : HTML, CSS, JavaScript, Bootstrap
+  * __BackEnd__ : Python
+  * __Framework__ : Django
+  * __Database__ :
+    - We are using Django ORM, so you can use any Database you want. More can be found [here](https://docs.djangoproject.com/en/2.2/ref/databases/)
 # Getting Started
 
 
